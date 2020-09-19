@@ -5,7 +5,7 @@ import tw from "tailwind.macro"
 const WindowButton = props => (
   <button
     css={css`
-      ${tw`bg-black h-4 w-4 rounded-full my-2 ml-3 relative`}
+      ${tw`bg-black h-3 w-3 rounded-full my-1 ml-3 relative`}
       border: 1px solid ${props.dark};
       background: ${`linear-gradient(${props.dark}, ${props.dark}, ${
         props.light
