@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import { useSpring, animated } from "react-spring"
 import { useDrag } from "react-use-gesture"
+import { css } from "@emotion/core"
 
 export default function Panel({ children, active, setActiveWindow }) {
   const draggingRef = useRef(false)
@@ -37,7 +38,11 @@ export default function Panel({ children, active, setActiveWindow }) {
       <animated.div
         {...bind()}
         style={{ y }}
-        className="mx-8 bg-gray-200 bg-opacity-75 rounded-lg border border-white"
+        css={css`
+          backdrop-filter: blur(4px);
+          -webkit-user-select: none;
+        `}
+        className="mx-8 max-w-sm bg-gray-200 bg-opacity-75 rounded-lg border border-white select-none"
       >
         <div className="flex items-center justify-center">
           <button className="py-6" onClick={() => close()}>

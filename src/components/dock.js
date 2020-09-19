@@ -22,15 +22,14 @@ export default function Dock({ activeWindow, setActiveWindow }) {
       className="fixed bottom-0 grid grid-flow-col gap-4 bg-gray-200 bg-opacity-75 p-5 mb-3 rounded-lg border border-white shadow"
       onClick={() => setActiveWindow("info")}
     >
-      <img
+      <video
         className="rounded-full w-16 mb-0"
-        src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-        alt=""
-      />
-      <img
-        className="rounded-full w-16 mb-0"
-        src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-        alt=""
+        loop
+        playsinline="true"
+        autoplay="true"
+        muted
+        preload="auto"
+        src="https://res.cloudinary.com/ds9ng4srx/video/upload/v1600546556/Farrah/orb-layered-crop_wdenhf.mp4"
       />
     </animated.div>
   )
