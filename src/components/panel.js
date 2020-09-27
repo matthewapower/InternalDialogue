@@ -34,10 +34,12 @@ export default function Panel({ children, active, setActiveWindow }) {
   )
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center">
+    <animated.div
+      className="fixed inset-0 flex items-center justify-center"
+      style={{ y }}
+    >
       <animated.div
         {...bind()}
-        style={{ y }}
         css={css`
           backdrop-filter: blur(4px);
           -webkit-user-select: none;
@@ -51,6 +53,6 @@ export default function Panel({ children, active, setActiveWindow }) {
         </div>
         <div className="p-5 text-center">{children}</div>
       </animated.div>
-    </div>
+    </animated.div>
   )
 }
