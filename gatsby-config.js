@@ -30,6 +30,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-theme-shopify-manager`,
+      options: {
+        shopName: process.env.shopName,
+        accessToken: process.env.accessToken,
+      },
+    },
+    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {

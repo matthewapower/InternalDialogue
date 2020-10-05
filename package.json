@@ -14,6 +14,8 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-are.na": "1.0.1",
     "gatsby-source-filesystem": "^2.3.4",
+    "gatsby-source-shopify": "^3.2.34",
+    "gatsby-theme-shopify-manager": "^0.1.8",
     "gatsby-theme-tailwindcss": "1.1.0",
     "gatsby-transformer-sharp": "^2.5.2",
     "prop-types": "^15.7.2",
