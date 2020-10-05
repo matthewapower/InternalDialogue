@@ -14,7 +14,7 @@ import Info from "./info"
 
 import "./layout.css"
 
-const Layout = ({ children, bg, bgChild, windowActive, back }) => {
+const Layout = ({ children, bg, winChild, windowActive, back }) => {
   const [activeWindow, setActiveWindow] = useState(null)
 
   if (windowActive && activeWindow !== "secondary") setActiveWindow("secondary")
@@ -35,13 +35,13 @@ const Layout = ({ children, bg, bgChild, windowActive, back }) => {
             : 'url("https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80") center center/cover',
         }}
       >
-        <main>{bgChild ? bgChild : children}</main>
+        <main>{children}</main>
         <Info setActiveWindow={setActiveWindow} activeWindow={activeWindow} />
         <Panel
           setActiveWindow={setActiveWindow}
           active={activeWindow === "secondary"}
         >
-          {bgChild ? children : ""}
+          {winChild ? winChild : ""}
         </Panel>
         <Dock setActiveWindow={setActiveWindow} activeWindow={activeWindow} />
       </div>
