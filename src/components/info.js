@@ -3,9 +3,9 @@ import Panel from "./panel"
 import logo from "../images/id-logo.svg"
 import { css } from "@emotion/core"
 
-export default function Info({ activeWindow, setActiveWindow }) {
+export default function Info() {
   return (
-    <Panel active={activeWindow === "info"} setActiveWindow={setActiveWindow}>
+    <>
       <img
         src={logo}
         css={css`
@@ -24,6 +24,6 @@ export default function Info({ activeWindow, setActiveWindow }) {
       <p className="font-bold text-gray-700 text-xs transform translate-y-4">
         Internal Dialogue © 2020 – ????
       </p>
-    </Panel>
+    </>
   )
 }
