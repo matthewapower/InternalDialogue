@@ -1,20 +1,12 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import logo from "../images/stamp-white.svg"
+import { Router } from "@reach/router"
+import Shop from "../components/shop"
 
-const IndexPage = () => {
+const ShopPage = () => {
   return (
-    <Layout>
-      <SEO title="Home" />
-      <div className="flex items-center justify-center absolute inset-0">
-        <img
-          src={logo}
-          alt="Internal Dialogue"
-          className="transform -translate-y-12"
-        />
-      </div>
-    </Layout>
+    <Router>
+      <Shop path="/shop/*" />
+    </Router>
   )
 }
-export default IndexPage
+export default ShopPage

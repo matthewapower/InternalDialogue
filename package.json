@@ -23,7 +23,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-spring": "^9.0.0-rc.3",
-    "react-use-gesture": "^7.0.16"
+    "react-use-gesture": "^7.0.16",
+    "swiper": "^6.3.5"
   },
   "devDependencies": {
     "prettier": "2.0.5"

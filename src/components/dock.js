@@ -1,8 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useSpring, animated } from "react-spring"
+import { useWindow, useWindowUpdate } from "./WindowContext"
 
-export default function Dock({ activeWindow, setActiveWindow }) {
+export default function Dock() {
+  const activeWindow = useWindow()
+  const setActiveWindow = useWindowUpdate()
   const { x } = useSpring({
     from: {
       x: 0,
@@ -33,7 +36,7 @@ export default function Dock({ activeWindow, setActiveWindow }) {
           src="https://res.cloudinary.com/ds9ng4srx/video/upload/v1600546556/Farrah/orb-layered-crop_wdenhf.mp4"
         />
       </button>
-      <Link to="/shop">
+      <button onClick={() => setActiveWindow("cart")}>
         <video
           className="rounded-full w-16 mb-0"
           loop
@@ -43,7 +46,7 @@ export default function Dock({ activeWindow, setActiveWindow }) {
           preload="auto"
           src="https://res.cloudinary.com/ds9ng4srx/video/upload/v1600546556/Farrah/orb-layered-crop_wdenhf.mp4"
         />
-      </Link>
+      </button>
     </animated.div>
   )
 }
