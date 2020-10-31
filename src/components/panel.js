@@ -53,15 +53,15 @@ export default function Panel({ children }) {
       className="fixed inset-0 flex items-center justify-center"
       style={{ y }}
     >
+      <div className="fixed inset-0" onClick={() => close()} />
       <animated.div
-        {...bind()}
         css={css`
           backdrop-filter: blur(4px);
           -webkit-user-select: none;
         `}
         className="mx-2 max-w-sm w-full bg-gray-200 bg-opacity-75 rounded-lg border border-white select-none"
       >
-        <div className="flex items-center justify-center">
+        <div {...bind()} className="flex items-center justify-center">
           <button className="py-6" onClick={() => close()}>
             <div className="w-12 h-1 bg-gray-500 rounded-full" />
           </button>

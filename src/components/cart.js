@@ -146,8 +146,6 @@ export default function Cart() {
           <a
             className="border border-black px-4 py-2 rounded hover:opacity-50"
             href={checkout}
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Complete My Order
           </a>

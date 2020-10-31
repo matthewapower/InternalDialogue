@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import SwiperCore, { Pagination, Zoom } from "swiper"
+import SwiperCore, { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { css } from "@emotion/core"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
@@ -8,7 +8,7 @@ import { useWindowUpdate } from "./WindowContext"
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css"
 
-SwiperCore.use([Pagination, Zoom])
+SwiperCore.use([Pagination])
 
 export default function ProductDetail(props) {
   const [variant, setVariant] = useState(props.product.variants[0])
@@ -52,7 +52,27 @@ export default function ProductDetail(props) {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <p>{props.product.description}</p>
+          <div
+            css={css`
+              padding-bottom: 80%;
+              position: relative;
+
+              .wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 60%;
+                transform: translate(-50%, -50%);
+              }
+            `}
+          >
+            <div
+              className="wrapper"
+              dangerouslySetInnerHTML={{
+                __html: props.product.descriptionHtml,
+              }}
+            />
+          </div>
         </SwiperSlide>
         {props.product.images.map((i, ind) => {
           if (ind !== 0) {
@@ -75,10 +95,7 @@ export default function ProductDetail(props) {
               className={`px-2${
                 variant.id === v.id ? " bg-black text-white" : ""
               }`}
-              onClick={() => {
-                console.log(v)
-                setVariant(v)
-              }}
+              onClick={() => setVariant(v)}
             >
               {v.title}
             </button>
