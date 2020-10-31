@@ -1,12 +1,12 @@
 import React from "react"
-import { Router } from "@reach/router"
+import Layout from "../components/layout"
 import Shop from "../components/shop"
 
 const ShopPage = () => {
   return (
-    <Router>
+    <Layout bg="white">
       <Shop path="/shop/*" />
-    </Router>
+    </Layout>
   )
 }
 export default ShopPage
