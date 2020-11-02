@@ -15,12 +15,7 @@ export default function Info() {
         alt="Internal Dialogue"
       />
       <p className="font-bold text-gray-700 text-sm">Version 1.0</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque
-        eligendi numquam accusamus voluptate nam maxime eaque error aperiam
-        molestiae minus quisquam impedit sapiente quia, eos, neque ratione
-        pariatur harum delectus.
-      </p>
+      <p>A design studio fueled by the subject matter that lives rent free in my mind.</p>
       <p className="font-bold text-gray-700 text-xs transform translate-y-4">
         Internal Dialogue © 2020 – ????
       </p>

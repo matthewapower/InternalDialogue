@@ -130,7 +130,7 @@ export default function Cart() {
       <div className="mb-4">
         <div
           className="max-w-screen-lg mx-auto mb-4 overflow-y-scroll px-4"
-          style={{ maxHeight: "400px" }}
+          style={{ maxHeight: "200px" }}
         >
           {lineItems.map(item => (
             <React.Fragment key={item.id}>

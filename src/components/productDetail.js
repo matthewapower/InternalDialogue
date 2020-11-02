@@ -28,7 +28,7 @@ export default function ProductDetail(props) {
   }
 
   return (
-    <div>
+    <div> 
       <h2 className="text-lg font-normal mb-0">{props.product.title}</h2>
       <p>${variant.price}</p>
       <Swiper
@@ -37,7 +37,8 @@ export default function ProductDetail(props) {
         pagination={{ clickable: true }}
         zoom
         css={css`
-          width: 100%;
+          width: 300px;
+          max-width: 90%;
 
           .swiper-pagination-bullet-active {
             background-color: black;
@@ -53,6 +54,7 @@ export default function ProductDetail(props) {
         </SwiperSlide>
         <SwiperSlide>
           <div
+            className="bg-white rounded mb-4"
             css={css`
               padding-bottom: 80%;
               position: relative;
@@ -61,7 +63,7 @@ export default function ProductDetail(props) {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                width: 60%;
+                width: 80%;
                 transform: translate(-50%, -50%);
               }
             `}

@@ -59,7 +59,7 @@ export default function Panel({ children }) {
           backdrop-filter: blur(4px);
           -webkit-user-select: none;
         `}
-        className="mx-2 max-w-sm w-full bg-gray-200 bg-opacity-75 rounded-lg border border-white select-none"
+        className="mx-8 max-w-sm bg-gray-200 bg-opacity-75 rounded-lg border border-white select-none"
       >
         <div {...bind()} className="flex items-center justify-center">
           <button className="py-6" onClick={() => close()}>
