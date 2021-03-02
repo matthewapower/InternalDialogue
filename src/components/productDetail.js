@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import SwiperCore, { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { css } from "@emotion/core"
+import tw from "tailwind.macro"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import { useWindowUpdate } from "./WindowContext"
 
@@ -14,6 +15,15 @@ export default function ProductDetail(props) {
   const [variant, setVariant] = useState(props.product.variants[0])
   const setActiveWindow = useWindowUpdate()
   const addItemToCart = useAddItemToCart()
+  const selects = props.product.options.map(o => {
+    return (
+      <div className="border border-black rounded mb-4">
+        { o.values.map(v => (
+          <button className="px-4 uppercase">{v}</button>
+        )) }
+      </div>
+    )
+  })
 
   async function addToCart() {
     const variantId = variant.shopifyId
@@ -28,88 +38,47 @@ export default function ProductDetail(props) {
   }
 
   return (
-    <div> 
-      <h2 className="text-lg font-normal mb-0">{props.product.title}</h2>
-      <p>${variant.price}</p>
+    <div class="gap-3 grid-cols-2 md:grid"> 
+      <div class="col-start-2 md:flex md:flex-col md:justify-end">
+        <h2 className="text-lg font-normal mb-0">{props.product.title}</h2>
+        <p>${variant.price}</p>
+      </div>
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
         pagination={{ clickable: true }}
         zoom
+        className="row-span-2 row-start-1"
         css={css`
-          width: 300px;
+          width: 500px;
           max-width: 90%;
-
           .swiper-pagination-bullet-active {
             background-color: black;
           }
         `}
       >
-        <SwiperSlide>
-          <img
-            src={props.product.images[0].originalSrc}
-            className="w-2/3 mx-auto mb-8"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="bg-white rounded mb-4"
-            css={css`
-              padding-bottom: 80%;
-              position: relative;
-
-              .wrapper {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 80%;
-                transform: translate(-50%, -50%);
-              }
-            `}
-          >
-            <div
-              className="wrapper"
-              dangerouslySetInnerHTML={{
-                __html: props.product.descriptionHtml,
-              }}
-            />
-          </div>
-        </SwiperSlide>
         {props.product.images.map((i, ind) => {
-          if (ind !== 0) {
             return (
               <SwiperSlide>
                 <img
                   src={i.originalSrc}
-                  className="w-2/3 mx-auto mb-8"
+                  className="w-full mx-auto mb-8"
                   alt=""
                 />
               </SwiperSlide>
             )
-          }
         })}
       </Swiper>
-      <div className="border border-black rounded inline-block mb-4">
-        {props.product.variants.map(v => {
-          return (
-            <button
-              className={`px-2${
-                variant.id === v.id ? " bg-black text-white" : ""
-              }`}
-              onClick={() => setVariant(v)}
-            >
-              {v.title}
-            </button>
-          )
-        })}
+      <div className="flex flex-col items-center">
+        {selects}
+        <button
+          className="border border-black rounded block mx-auto px-2 mb-4 uppercase text-xs font-semibold"
+          onClick={addToCart}
+        >
+          Add to Cart
+        </button>
+        <div dangerouslySetInnerHTML={{__html: props.product.descriptionHtml}}/>
       </div>
-      <button
-        className="border border-black rounded block mx-auto px-2 mb-4 uppercase text-xs font-semibold"
-        onClick={addToCart}
-      >
-        Add to Cart
-      </button>
     </div>
   )
 }

@@ -25,6 +25,7 @@ const Layout = ({ children, bg, winChild, windowActive, back }) => {
           className="fixed inset-0 flex flex-col items-center justify-between self-stretch overflow-y-scroll"
           style={{
             margin: `0 auto`,
+            paddingBottom: '180px',
             background: bg
               ? bg
               : 'url("https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80") center center/cover',

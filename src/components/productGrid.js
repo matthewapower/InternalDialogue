@@ -12,6 +12,10 @@ export default function ProductGrid() {
           title
           id
           descriptionHtml
+          options {
+            name
+            values
+          }    
           variants {
             price
             title
