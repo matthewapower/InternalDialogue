@@ -34,7 +34,6 @@ export default function ProductGrid() {
     <div className="grid grid-cols-3 gap-4 md:gap-16 px-12 items-center justify-center max-w-2xl">
       {products.map(p => (
         <button
-          onClick={() => setActiveWindow({ type: "product", product: p })}
         >
           <img src={p.images[0].originalSrc} className="mb-0" alt={p.handle} />
         </button>

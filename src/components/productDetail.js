@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import SwiperCore, { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { css } from "@emotion/core"
-import tw from "tailwind.macro"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import { useWindowUpdate } from "./WindowContext"
 
@@ -82,3 +81,4 @@ export default function ProductDetail(props) {
     </div>
   )
 }
+
